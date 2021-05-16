@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4644265194C8000FC9F0 /* AppDelegate.swift */; };
 		4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */; };
-		4F5E4649265194C8000FC9F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4648265194C8000FC9F0 /* ViewController.swift */; };
 		4F5E464C265194C8000FC9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464A265194C8000FC9F0 /* Main.storyboard */; };
 		4F5E464E265194C8000FC9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464D265194C8000FC9F0 /* Assets.xcassets */; };
 		4F5E4651265194C8000FC9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464F265194C8000FC9F0 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		4F5E4641265194C8000FC9F0 /* HotelManzana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelManzana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5E4644265194C8000FC9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F5E4648265194C8000FC9F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F5E464B265194C8000FC9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F5E464D265194C8000FC9F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F5E4650265194C8000FC9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,13 +56,36 @@
 			children = (
 				4F5E4644265194C8000FC9F0 /* AppDelegate.swift */,
 				4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */,
-				4F5E4648265194C8000FC9F0 /* ViewController.swift */,
 				4F5E464A265194C8000FC9F0 /* Main.storyboard */,
+				4F5E465C265195BA000FC9F0 /* Assets */,
+				4F5E465B265195AA000FC9F0 /* ViewControllers */,
+				4F5E465A265195A5000FC9F0 /* Models */,
+			);
+			path = HotelManzana;
+			sourceTree = "<group>";
+		};
+		4F5E465A265195A5000FC9F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F5E465B265195AA000FC9F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4F5E465C265195BA000FC9F0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				4F5E464D265194C8000FC9F0 /* Assets.xcassets */,
 				4F5E464F265194C8000FC9F0 /* LaunchScreen.storyboard */,
 				4F5E4652265194C8000FC9F0 /* Info.plist */,
 			);
-			path = HotelManzana;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F5E4649265194C8000FC9F0 /* ViewController.swift in Sources */,
 				4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */,
 				4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
-				INFOPLIST_FILE = HotelManzana/Info.plist;
+				INFOPLIST_FILE = HotelManzana/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
-				INFOPLIST_FILE = HotelManzana/Info.plist;
+				INFOPLIST_FILE = HotelManzana/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
