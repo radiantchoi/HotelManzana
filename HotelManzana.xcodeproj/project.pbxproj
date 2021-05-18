@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F28059D2652E51E00913FD1 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */; };
 		4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4644265194C8000FC9F0 /* AppDelegate.swift */; };
 		4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */; };
 		4F5E464C265194C8000FC9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464A265194C8000FC9F0 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 		4F5E4641265194C8000FC9F0 /* HotelManzana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelManzana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5E4644265194C8000FC9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		4F5E465B265195AA000FC9F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */,
 				4F5E465E26519706000FC9F0 /* CustomerInfo.swift in Sources */,
+				4F28059D2652E51E00913FD1 /* AddRegistrationTableViewController.swift in Sources */,
 				4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
