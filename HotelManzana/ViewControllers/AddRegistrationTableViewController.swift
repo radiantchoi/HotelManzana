@@ -18,6 +18,24 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet private var checkOutDateLabel: UILabel!
     @IBOutlet private var checkOutDatePicker: UIDatePicker!
     
+    let checkInDateLabelCellIndexPath = IndexPath(row: 0, section: 1)
+    let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
+    let checkOutDateLabelCellIndexPath = IndexPath(row: 2, section: 1)
+    let checkOutDatePickerCellIndexPath = IndexPath(row: 3, section: 1)
+    
+    
+    private var isCheckInDatePickerShown: Bool = false {
+        didSet {
+            checkInDatePicker.isHidden = !isCheckInDatePickerShown
+        }
+    }
+    
+    private var isCheckOutDatePickerShown: Bool = false {
+        didSet {
+            checkOutDatePicker.isHidden = !isCheckOutDatePickerShown
+        }
+    }
+    
 }
 
 extension AddRegistrationTableViewController {
@@ -30,11 +48,11 @@ extension AddRegistrationTableViewController {
     }
 }
 
-/*
+
 extension AddRegistrationTableViewController {
     
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -44,8 +62,61 @@ extension AddRegistrationTableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-}
 */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath {
+        case checkInDatePickerCellIndexPath:
+            if isCheckInDatePickerShown {
+                return 216.0
+            } else {
+                return 0.0
+            }
+        case checkOutDatePickerCellIndexPath:
+            if isCheckOutDatePickerShown {
+                return 216.0
+            } else {
+                return 0
+            }
+        default:
+            return 44.0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath {
+        case checkInDateLabelCellIndexPath:
+            if isCheckInDatePickerShown {
+                isCheckInDatePickerShown = false
+            } else if isCheckOutDatePickerShown {
+                isCheckOutDatePickerShown = false
+                isCheckInDatePickerShown = true
+            } else {
+                isCheckInDatePickerShown = true
+            }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+        case checkOutDateLabelCellIndexPath:
+            if isCheckOutDatePickerShown {
+                isCheckOutDatePickerShown = false
+            } else if isCheckInDatePickerShown {
+                isCheckInDatePickerShown = false
+                isCheckOutDatePickerShown = true
+            } else {
+                isCheckOutDatePickerShown = true
+            }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        
+        default:
+            break
+        }
+    }
+}
+
 
 extension AddRegistrationTableViewController {
     private func updateDateViews() {
