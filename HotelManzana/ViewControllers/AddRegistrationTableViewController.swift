@@ -9,14 +9,14 @@ import UIKit
 
 class AddRegistrationTableViewController: UITableViewController {
     
-    @IBOutlet var firstNameTextField: UITextField!
-    @IBOutlet var lastNameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet private var firstNameTextField: UITextField!
+    @IBOutlet private var lastNameTextField: UITextField!
+    @IBOutlet private var emailTextField: UITextField!
     
-    @IBOutlet var checkInDateLabel: UILabel!
-    @IBOutlet var checkInDatePicker: UIDatePicker!
-    @IBOutlet var checkOutDateLabel: UILabel!
-    @IBOutlet var checkOutDatePicker: UIDatePicker!
+    @IBOutlet private var checkInDateLabel: UILabel!
+    @IBOutlet private var checkInDatePicker: UIDatePicker!
+    @IBOutlet private var checkOutDateLabel: UILabel!
+    @IBOutlet private var checkOutDatePicker: UIDatePicker!
     
 }
 
@@ -26,10 +26,11 @@ extension AddRegistrationTableViewController {
         let midnightToday = Calendar.current.startOfDay(for: Date())
         checkInDatePicker.minimumDate = midnightToday
         checkInDatePicker.date = midnightToday
-
+        updateDateViews()
     }
 }
 
+/*
 extension AddRegistrationTableViewController {
     
     // MARK: - Table view data source
@@ -44,9 +45,10 @@ extension AddRegistrationTableViewController {
         return 0
     }
 }
+*/
 
 extension AddRegistrationTableViewController {
-    func updateDateViews() {
+    private func updateDateViews() {
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(86400)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -57,7 +59,7 @@ extension AddRegistrationTableViewController {
 }
 
 extension AddRegistrationTableViewController {
-    @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func doneBarButtonTapped(_ sender: UIBarButtonItem) {
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
@@ -71,10 +73,8 @@ extension AddRegistrationTableViewController {
         print("Checkin: \(checkInDate)")
         print("Checkout: \(checkOutDate)")
     }
-}
-
-extension AddRegistrationTableViewController {
-    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+    
+    @IBAction private func datePickerValueChanged(_ sender: UIDatePicker) {
         updateDateViews()
     }
 }
