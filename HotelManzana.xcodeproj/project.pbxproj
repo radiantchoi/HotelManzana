@@ -16,6 +16,7 @@
 		4F5E464E265194C8000FC9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464D265194C8000FC9F0 /* Assets.xcassets */; };
 		4F5E4651265194C8000FC9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464F265194C8000FC9F0 /* LaunchScreen.storyboard */; };
 		4F5E465E26519706000FC9F0 /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E465D26519706000FC9F0 /* CustomerInfo.swift */; };
+		4FDDB9CE2658361800325B21 /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDDB9CD2658361800325B21 /* RegistrationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4F5E4650265194C8000FC9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5E4652265194C8000FC9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F5E465D26519706000FC9F0 /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		4FDDB9CD2658361800325B21 /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */,
 				4F3D8ACA2657C768003B6F82 /* SelectRoomTypeTableViewController.swift */,
+				4FDDB9CD2658361800325B21 /* RegistrationTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				4F28059D2652E51E00913FD1 /* AddRegistrationTableViewController.swift in Sources */,
 				4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */,
 				4F3D8ACB2657C768003B6F82 /* SelectRoomTypeTableViewController.swift in Sources */,
+				4FDDB9CE2658361800325B21 /* RegistrationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

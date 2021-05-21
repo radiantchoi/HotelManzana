@@ -12,8 +12,8 @@ struct Customer {
     var lastName: String
     var email: String
     
-    var checkinDate: Date
-    var checkoutDate: Date
+    var checkInDate: Date
+    var checkOutDate: Date
     
     var numberOfAdults: Int
     var numberOfChildren: Int
