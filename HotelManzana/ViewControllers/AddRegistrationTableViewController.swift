@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddRegistrationTableViewController: UITableViewController {
+class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeTableViewControllerDelegate {
     
     @IBOutlet private var firstNameTextField: UITextField!
     @IBOutlet private var lastNameTextField: UITextField!
@@ -25,10 +25,13 @@ class AddRegistrationTableViewController: UITableViewController {
     
     @IBOutlet private var wifiSwitch: UISwitch!
     
+    @IBOutlet private var roomTypeLabel: UILabel!
+    
     let checkInDateLabelCellIndexPath = IndexPath(row: 0, section: 1)
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDateLabelCellIndexPath = IndexPath(row: 2, section: 1)
     let checkOutDatePickerCellIndexPath = IndexPath(row: 3, section: 1)
+
     
     private var isCheckInDatePickerShown: Bool = false {
         didSet {
@@ -42,6 +45,12 @@ class AddRegistrationTableViewController: UITableViewController {
         }
     }
     
+    var roomType: RoomType?
+    
+    func didSelect(roomType: RoomType) {
+        self.roomType = roomType
+        updateRoomType()
+    }
 }
 
 extension AddRegistrationTableViewController {
@@ -52,25 +61,13 @@ extension AddRegistrationTableViewController {
         checkInDatePicker.date = midnightToday
         updateDateViews()
         updateNumberOfGuests()
+        updateRoomType()
     }
 }
 
 
 extension AddRegistrationTableViewController {
-    
-    // MARK: - Table view data source
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-*/
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case checkInDatePickerCellIndexPath:
@@ -122,6 +119,15 @@ extension AddRegistrationTableViewController {
             break
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectRoomType" {
+            let destinationViewController = segue.destination as? SelectRoomTypeTableViewController
+            destinationViewController?.delegate = self
+            destinationViewController?.roomType = roomType
+        }
+    }
+    
 }
 
 
@@ -139,6 +145,15 @@ extension AddRegistrationTableViewController {
         numberOfAdultsLabel.text = "\(Int(numberOfAdultsStepper.value))"
         numberOfChildrenLabel.text = "\(Int(numberOfChildrenStepper.value))"
     }
+    
+    private func updateRoomType() {
+        if let roomType = roomType {
+            roomTypeLabel.text = roomType.name
+        } else {
+            roomTypeLabel.text = "Not Set"
+        }
+    }
+    
 }
 
 extension AddRegistrationTableViewController {
@@ -151,6 +166,7 @@ extension AddRegistrationTableViewController {
         let numberOfAdults = Int(numberOfAdultsStepper.value)
         let numberOfChildren = Int(numberOfChildrenStepper.value)
         let hasWifi = wifiSwitch.isOn
+        let roomChoice = roomType?.name ?? "Not Set"
         
         print("DONE TAPPED")
         print("firstName: \(firstName)")
@@ -161,6 +177,7 @@ extension AddRegistrationTableViewController {
         print("numberOfAdults: \(numberOfAdults)")
         print("numberOfChildren: \(numberOfChildren)")
         print("wifi: \(hasWifi)")
+        print("roomType: \(roomChoice)")
     }
     
     @IBAction private func datePickerValueChanged(_ sender: UIDatePicker) {
