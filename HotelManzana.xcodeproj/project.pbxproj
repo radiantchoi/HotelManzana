@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F28059D2652E51E00913FD1 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */; };
+		4F3D8ACB2657C768003B6F82 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D8ACA2657C768003B6F82 /* SelectRoomTypeTableViewController.swift */; };
+		4F3D8ACE2657C8F2003B6F82 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D8ACD2657C8F2003B6F82 /* RoomType.swift */; };
 		4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4644265194C8000FC9F0 /* AppDelegate.swift */; };
 		4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */; };
 		4F5E464C265194C8000FC9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E464A265194C8000FC9F0 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
+		4F3D8ACA2657C768003B6F82 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
+		4F3D8ACD2657C8F2003B6F82 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		4F5E4641265194C8000FC9F0 /* HotelManzana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelManzana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5E4644265194C8000FC9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5E4646265194C8000FC9F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5E465D26519706000FC9F0 /* CustomerInfo.swift */,
+				4F3D8ACD2657C8F2003B6F82 /* RoomType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4F28059C2652E51E00913FD1 /* AddRegistrationTableViewController.swift */,
+				4F3D8ACA2657C768003B6F82 /* SelectRoomTypeTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,8 +172,10 @@
 			files = (
 				4F5E4645265194C8000FC9F0 /* AppDelegate.swift in Sources */,
 				4F5E465E26519706000FC9F0 /* CustomerInfo.swift in Sources */,
+				4F3D8ACE2657C8F2003B6F82 /* RoomType.swift in Sources */,
 				4F28059D2652E51E00913FD1 /* AddRegistrationTableViewController.swift in Sources */,
 				4F5E4647265194C8000FC9F0 /* SceneDelegate.swift in Sources */,
+				4F3D8ACB2657C768003B6F82 /* SelectRoomTypeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

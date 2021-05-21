@@ -23,11 +23,12 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet private var numberOfChildrenLabel: UILabel!
     @IBOutlet private var numberOfChildrenStepper: UIStepper!
     
+    @IBOutlet private var wifiSwitch: UISwitch!
+    
     let checkInDateLabelCellIndexPath = IndexPath(row: 0, section: 1)
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDateLabelCellIndexPath = IndexPath(row: 2, section: 1)
     let checkOutDatePickerCellIndexPath = IndexPath(row: 3, section: 1)
-    
     
     private var isCheckInDatePickerShown: Bool = false {
         didSet {
@@ -40,7 +41,7 @@ class AddRegistrationTableViewController: UITableViewController {
             checkOutDatePicker.isHidden = !isCheckOutDatePickerShown
         }
     }
-
+    
 }
 
 extension AddRegistrationTableViewController {
@@ -149,6 +150,7 @@ extension AddRegistrationTableViewController {
         let checkOutDate = checkOutDatePicker.date
         let numberOfAdults = Int(numberOfAdultsStepper.value)
         let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
         
         print("DONE TAPPED")
         print("firstName: \(firstName)")
@@ -158,6 +160,7 @@ extension AddRegistrationTableViewController {
         print("checkOut: \(checkOutDate)")
         print("numberOfAdults: \(numberOfAdults)")
         print("numberOfChildren: \(numberOfChildren)")
+        print("wifi: \(hasWifi)")
     }
     
     @IBAction private func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -166,6 +169,9 @@ extension AddRegistrationTableViewController {
     
     @IBAction private func stepperValueChanged(_ sender: UIStepper) {
         updateNumberOfGuests()
+    }
+    
+    @IBAction private func wifiSwitchChanged(_ sender: UISwitch) {
     }
 
 }
