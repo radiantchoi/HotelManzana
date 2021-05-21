@@ -18,6 +18,11 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet private var checkOutDateLabel: UILabel!
     @IBOutlet private var checkOutDatePicker: UIDatePicker!
     
+    @IBOutlet private var numberOfAdultsLabel: UILabel!
+    @IBOutlet private var numberOfAdultsStepper: UIStepper!
+    @IBOutlet private var numberOfChildrenLabel: UILabel!
+    @IBOutlet private var numberOfChildrenStepper: UIStepper!
+    
     let checkInDateLabelCellIndexPath = IndexPath(row: 0, section: 1)
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDateLabelCellIndexPath = IndexPath(row: 2, section: 1)
@@ -35,7 +40,7 @@ class AddRegistrationTableViewController: UITableViewController {
             checkOutDatePicker.isHidden = !isCheckOutDatePickerShown
         }
     }
-    
+
 }
 
 extension AddRegistrationTableViewController {
@@ -45,6 +50,7 @@ extension AddRegistrationTableViewController {
         checkInDatePicker.minimumDate = midnightToday
         checkInDatePicker.date = midnightToday
         updateDateViews()
+        updateNumberOfGuests()
     }
 }
 
@@ -127,6 +133,11 @@ extension AddRegistrationTableViewController {
         checkInDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLabel.text = dateFormatter.string(from: checkOutDatePicker.date)
     }
+    
+    private func updateNumberOfGuests() {
+        numberOfAdultsLabel.text = "\(Int(numberOfAdultsStepper.value))"
+        numberOfChildrenLabel.text = "\(Int(numberOfChildrenStepper.value))"
+    }
 }
 
 extension AddRegistrationTableViewController {
@@ -136,16 +147,25 @@ extension AddRegistrationTableViewController {
         let email = emailTextField.text ?? ""
         let checkInDate = checkInDatePicker.date
         let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
         
         print("DONE TAPPED")
-        print("First name: \(firstName)")
-        print("Last name: \(lastName)")
+        print("firstName: \(firstName)")
+        print("lastName: \(lastName)")
         print("email: \(email)")
-        print("Checkin: \(checkInDate)")
-        print("Checkout: \(checkOutDate)")
+        print("checkIn: \(checkInDate)")
+        print("checkOut: \(checkOutDate)")
+        print("numberOfAdults: \(numberOfAdults)")
+        print("numberOfChildren: \(numberOfChildren)")
     }
     
     @IBAction private func datePickerValueChanged(_ sender: UIDatePicker) {
         updateDateViews()
     }
+    
+    @IBAction private func stepperValueChanged(_ sender: UIStepper) {
+        updateNumberOfGuests()
+    }
+
 }
